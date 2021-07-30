@@ -11,10 +11,10 @@ define(['gmaps', 'jquery', 'backbone', 'underscore', 'mapcontrol'],
 
   var Card = Backbone.Model.extend({
     initialize: function(){
-      //console.log(this.attributes)
+      console.log(this.attributes)
       if (typeof this.attributes.attachments[0] != 'undefined' 
               && typeof this.attributes.attachments[0].previews != 'undefined'
-              && this.attributes.attachments[0].name.search(/(png|jpg)$/) > -1) {
+              && this.attributes.attachments[0].name.search(/(png|jpg|jpeg)$/) > -1) {
         this.set({
           'thumbnail': this.attributes.attachments[0].previews[3].url,
           'aspectRatio': this.attributes.attachments[0].previews[3].width / this.attributes.attachments[0].previews[3].height
